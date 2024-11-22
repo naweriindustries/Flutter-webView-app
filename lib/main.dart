@@ -42,7 +42,7 @@ class _WebViewAppState extends State<WebViewApp> {
       appBar: AppBar(
         title: const Text('Flutter WebView App'),
       ),
-      body: WebView(
+      body: WebViewApp(
         initialUrl: widget.initialUrl,  // Use the initialUrl passed into the widget
         javascriptMode: JavascriptMode.unrestricted,
         onWebViewCreated: (WebViewController controller) {
