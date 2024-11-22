@@ -34,7 +34,6 @@ class _WebViewAppState extends State<WebViewApp> {
   void initState() {
     super.initState();
     // WebView initialization to ensure WebView is ready when the app starts
-    WebViewPlatformController();
   }
 
   @override
