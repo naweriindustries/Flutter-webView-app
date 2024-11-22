@@ -3,7 +3,7 @@ import 'package:webview_flutter/webview_flutter.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized(); // Ensures Flutter bindings are initialized before running app.
+  WidgetsFlutterBinding.ensureInitialized(); // Ensures Flutter bindings are initialized before running the app.
   await OneSignal.shared.setAppId("5e423775-67c6-42de-8a63-d2e6bbfa7219");  // Initialize OneSignal
   runApp(MyApp());
 }
@@ -19,9 +19,10 @@ class MyApp extends StatelessWidget {
 }
 
 class WebViewApp extends StatefulWidget {
-  final String initialUrl;  // Correctly declared as a class member variable
+  final String initialUrl; // Class member variable for URL
+  final JavascriptMode javascriptMode; // Add javascriptMode as a parameter
 
-  WebViewApp({required this.initialUrl});  // Constructor to initialize the initialUrl
+  WebViewApp({required this.initialUrl, this.javascriptMode = JavascriptMode.unrestricted});  // Constructor to initialize both initialUrl and javascriptMode
 
   @override
   State<WebViewApp> createState() => _WebViewAppState();
@@ -44,7 +45,7 @@ class _WebViewAppState extends State<WebViewApp> {
       ),
       body: WebViewApp(
         initialUrl: widget.initialUrl,  // Use the initialUrl passed into the widget
-        javascriptMode: JavascriptMode.unrestricted,
+        javascriptMode: widget.javascriptMode,  // Use javascriptMode passed into the widget
         onWebViewCreated: (WebViewController controller) {
           _controller = controller;
         },
