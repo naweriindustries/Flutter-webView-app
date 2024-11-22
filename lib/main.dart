@@ -38,7 +38,7 @@ class _WebViewAppState extends State<WebViewApp> {
       body: WebView(
         initialUrl: widget.initialUrl,  // Use the initialUrl passed into the widget
         javascriptMode: JavascriptMode.unrestricted,
-        onWebViewCreated: (controller) {
+        onWebViewCreated: (WebViewController controller) {
           _controller = controller;
         },
       ),
