@@ -41,3 +41,23 @@ class _WebViewAppState extends State<WebViewApp> {
     );
   }
 }
+
+
+import 'package:onesignal_flutter/onesignal_flutter.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    OneSignal.shared.setAppId("5e423775-67c6-42de-8a63-d2e6bbfa7219");
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('OneSignal Demo')),
+        body: Center(child: Text('OneSignal Initialized!')),
+      ),
+    );
+  }
+}
