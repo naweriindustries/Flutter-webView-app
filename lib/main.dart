@@ -1,16 +1,43 @@
-// Copyright 2014 The Flutter Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
+import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
-import 'package:flutter/widgets.dart';
+void main() {
+  runApp(MyApp());
+}
 
-void main() =>
-  runApp(
-    const Center(
-      child:
-        Text('Hello, world!',
-          key: Key('title'),
-          textDirection: TextDirection.ltr,
-        ),
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: WebViewApp(),
+    );
+  }
+}
+
+class WebViewApp extends StatefulWidget {
+  @override
+  State<WebViewApp> createState() => _WebViewAppState();
+}
+
+class _WebViewAppState extends State<WebViewApp> {
+  late final WebViewController _controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Flutter WebView App'),
+      ),
+      body: WebView(
+       final String initialUrl;
+        WebViewApp({required this.initialUrl});
+
+        javascriptMode: JavascriptMode.unrestricted,
+        onWebViewCreated: (controller) {
+          _controller = controller;
+        },
       ),
     );
+  }
+}
