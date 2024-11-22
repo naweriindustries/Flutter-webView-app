@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 void main() {
   runApp(MyApp());
@@ -42,10 +43,6 @@ class _WebViewAppState extends State<WebViewApp> {
   }
 }
 
-import 'package:webview_flutter/webview_flutter.dart';
-
-
-import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 void main() {
   runApp(MyApp());
