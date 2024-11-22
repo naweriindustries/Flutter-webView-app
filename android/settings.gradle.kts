@@ -26,11 +26,7 @@ pluginManagement {
 }
 
 buildscript {
-    dependencyLocking {
-        lockFile = file("${rootProject.projectDir}/buildscript-gradle.lockfile")
-        lockAllConfigurations()
-    }
-}
+   }
 
 plugins {
     id("dev.flutter.flutter-plugin-loader") version "1.0.0"
